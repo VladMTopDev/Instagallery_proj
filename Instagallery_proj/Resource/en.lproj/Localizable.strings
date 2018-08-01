@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Instagallery_proj
+
+  Created by Developer on 7/18/18.
+  Copyright © 2018 Developer. All rights reserved.
+*/
+
+"Ok" = "Ok";
+"Cancel" = "Cancel";
+"Error" = "Error";
+"NoConnectionMessage" = "No internet connection";
+"Instagram" = "Instagram";
+"Logout" = "Logout";
+"Thumbnail" = "Thumbnail";
+"Custom" = "Custom";

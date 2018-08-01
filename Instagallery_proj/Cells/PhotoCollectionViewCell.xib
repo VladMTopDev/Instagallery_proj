@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionViewCell" id="gTV-IL-0wX" customClass="PhotoCollectionViewCell" customModule="Instagallery_proj" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNR-oB-TC8">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E2x-cj-O8q">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="E2x-cj-O8q" secondAttribute="trailing" id="1cB-2b-H1n"/>
+                            <constraint firstItem="E2x-cj-O8q" firstAttribute="leading" secondItem="QNR-oB-TC8" secondAttribute="leading" id="IzF-vO-0cw"/>
+                            <constraint firstItem="E2x-cj-O8q" firstAttribute="top" secondItem="QNR-oB-TC8" secondAttribute="top" id="J4N-IJ-279"/>
+                            <constraint firstItem="E2x-cj-O8q" firstAttribute="centerX" secondItem="QNR-oB-TC8" secondAttribute="centerX" id="qOO-mS-5SB"/>
+                            <constraint firstItem="E2x-cj-O8q" firstAttribute="centerY" secondItem="QNR-oB-TC8" secondAttribute="centerY" id="sNs-XL-6b1"/>
+                            <constraint firstAttribute="bottom" secondItem="E2x-cj-O8q" secondAttribute="bottom" id="wfz-Ha-xwT"/>
+                        </constraints>
+                    </scrollView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="QNR-oB-TC8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2TI-J5-LSx"/>
+                <constraint firstAttribute="trailing" secondItem="QNR-oB-TC8" secondAttribute="trailing" id="6pf-cd-2Vo"/>
+                <constraint firstItem="QNR-oB-TC8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MNj-Uq-glP"/>
+                <constraint firstAttribute="trailing" secondItem="QNR-oB-TC8" secondAttribute="trailing" id="R2g-7r-Pq6"/>
+                <constraint firstItem="QNR-oB-TC8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Vu6-Ci-0kJ"/>
+                <constraint firstAttribute="bottom" secondItem="QNR-oB-TC8" secondAttribute="bottom" id="fPj-vf-eaw"/>
+                <constraint firstItem="QNR-oB-TC8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rRq-k3-stW"/>
+                <constraint firstAttribute="bottom" secondItem="QNR-oB-TC8" secondAttribute="bottom" id="ysc-lF-dcP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="imageView" destination="E2x-cj-O8q" id="DAT-Sy-UcH"/>
+                <outlet property="scrollView" destination="QNR-oB-TC8" id="8oF-Xc-cg3"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

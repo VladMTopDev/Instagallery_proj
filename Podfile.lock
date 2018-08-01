@@ -1,0 +1,62 @@
+PODS:
+  - Alamofire (4.7.2)
+  - AlamofireImage (3.3.1):
+    - Alamofire (~> 4.5)
+  - BubbleTransition (2.0.2)
+  - Keychain (0.3.1)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya-ObjectMapper (2.7):
+    - Moya-ObjectMapper/Core (= 2.7)
+  - Moya-ObjectMapper/Core (2.7):
+    - Moya (~> 11)
+    - ObjectMapper (~> 3.3)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - ObjectMapper (3.3.0)
+  - PKHUD (5.1.0)
+  - R.swift (4.0.0):
+    - R.swift.Library (~> 4.0.0)
+  - R.swift.Library (4.0.0)
+  - Result (3.2.4)
+
+DEPENDENCIES:
+  - AlamofireImage (~> 3.3)
+  - BubbleTransition (~> 2.0.0)
+  - Keychain
+  - Moya (~> 11.0)
+  - Moya-ObjectMapper
+  - PKHUD (~> 5.0)
+  - R.swift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - BubbleTransition
+    - Keychain
+    - Moya
+    - Moya-ObjectMapper
+    - ObjectMapper
+    - PKHUD
+    - R.swift
+    - R.swift.Library
+    - Result
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  BubbleTransition: 7d98ed7d56f0940e83f350a98103ad473491c769
+  Keychain: ef812eafcf6593fe4409b07cfecc00b95fb373ed
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  PKHUD: 62ea46a1e88c4def1da784878d199bb54c841e3c
+  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
+  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+
+PODFILE CHECKSUM: 844a2d82c2d90f69f18eabedeebea11c4508538d
+
+COCOAPODS: 1.5.2
