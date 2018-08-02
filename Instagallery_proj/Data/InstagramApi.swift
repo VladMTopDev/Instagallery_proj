@@ -36,7 +36,7 @@ extension InstagramApi: TargetType {
     var task: Task {
         switch self {
         case .getPhotos:
-            return .requestParameters(parameters: ["access_token": InstagramApiProvider.shared.accessToken ?? ""], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["access_token": InstagramApiProvider().accessToken ?? ""], encoding: URLEncoding.queryString)
         }
     }
     

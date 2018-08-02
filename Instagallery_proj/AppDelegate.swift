@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let navigationController = UINavigationController()
         var rootViewController: UIViewController = LoginViewController()
-        if let accessToken = InstagramApiProvider.shared.accessToken, !accessToken.isEmpty {
+        if let accessToken = InstagramApiProvider().accessToken, !accessToken.isEmpty {
             rootViewController = GalleryViewController()
         }
         navigationController.navigationBar.isHidden = true

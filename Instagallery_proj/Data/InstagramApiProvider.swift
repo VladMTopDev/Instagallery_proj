@@ -36,8 +36,6 @@ protocol InstagramApiProviderDelegate: class {
 
 class InstagramApiProvider: NSObject {
     
-    static let shared = InstagramApiProvider()
-    
     var delegate: InstagramApiProviderDelegate?
     
     override init() {

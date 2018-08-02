@@ -13,13 +13,13 @@ import Result
 class InstagramApiProviderTest: XCTestCase {
     
     func test_getAuthUrl() {
-        let apiManager = InstagramApiProvider.shared
+        let apiManager = InstagramApiProvider()
         let authUrl = apiManager.getAuthUrl()
         XCTAssertNotNil(authUrl)
     }
     
     func test_success_handleAccessToken() {
-        let apiManager = InstagramApiProvider.shared
+        let apiManager = InstagramApiProvider()
         let tokenRedirectLink = String(format: "%@/%@testvalue", InstagramApiProviderConstants.RedirectLink, InstagramApiProviderConstants.accessTokenLinkField)
         let url = URL(string:tokenRedirectLink)
         let urlRequest = URLRequest(url:url!)
@@ -35,7 +35,7 @@ class InstagramApiProviderTest: XCTestCase {
     }
     
     func test_failure_handleAccessToken() {
-        let apiManager = InstagramApiProvider.shared
+        let apiManager = InstagramApiProvider()
         let authUrl = URL(string:"https://")
         let urlRequest = URLRequest(url:authUrl!)
         let expectation = self.expectation(description: "handleAccessToken")
@@ -47,7 +47,7 @@ class InstagramApiProviderTest: XCTestCase {
     }
     
     func test_parsePhotosResponse() {
-        let apiManager = InstagramApiProvider.shared
+        let apiManager = InstagramApiProvider()
         do {
             let exampleData = try JSONSerialization.data(withJSONObject: ["data":[["created_time":"123", "images":["thumbnail": ["width":200, "height":200, "url":"https://testlink.com"], "standard_resolution":["width":200, "height":200, "url":"https://testlink.com"], "low_resolution":["width":200, "height":200, "url":"https://testlink.com"]]], ["created_time":"123", "images":["thumbnail": ["width":200, "height":200, "url":"https://testlink.com"], "standard_resolution":["width":200, "height":200, "url":"https://testlink.com"], "low_resolution":["width":200, "height":200, "url":"https://testlink.com"]]]]], options: []) // 2 values
             let response = Response.init(statusCode: 200, data: exampleData)
@@ -60,7 +60,7 @@ class InstagramApiProviderTest: XCTestCase {
     }
     
     func test_parsePhotosFilteredResponse() {
-        let apiManager = InstagramApiProvider.shared
+        let apiManager = InstagramApiProvider()
         do {
             let exampleData = try JSONSerialization.data(withJSONObject: ["data":[["created_time":"123", "images":[]], ["created_time":"123", "images":["thumbnail":["url":"testurl", "width": 123, "height":123]]]]], options: []) // 2 values
             let response = Response.init(statusCode: 200, data: exampleData)
@@ -74,7 +74,7 @@ class InstagramApiProviderTest: XCTestCase {
     }
     
     func test_parsePhotosResponseCarousel() {
-        let apiManager = InstagramApiProvider.shared
+        let apiManager = InstagramApiProvider()
         do {
             let exampleData = try JSONSerialization.data(withJSONObject: ["data":[["created_time":"123", "images":[], "carousel_media":[["images":["thumbnail":["url":"123", "width":200,"height":200], "low_resolution":["url":"123", "width":200,"height":200], "standart_resolution":["url":"123", "width":200,"height":200]]], ["images":["thumbnail":["url":"123", "width":200,"height":200], "low_resolution":["url":"123", "width":200,"height":200], "standart_resolution":["url":"123", "width":200,"height":200]]]]], ["created_time":"123", "images":["thumbnail":["url":"testurl", "width": 123, "height":123]]]]], options: []) // 2 values from carousel_media and 1 from data object
             let response = Response.init(statusCode: 200, data: exampleData)
@@ -89,7 +89,7 @@ class InstagramApiProviderTest: XCTestCase {
     
     
     func test_logout() {
-        let apiManager = InstagramApiProvider.shared
+        let apiManager = InstagramApiProvider()
         apiManager.logout()
         var isContains = false
         if let cookies = HTTPCookieStorage.shared.cookies {

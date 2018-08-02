@@ -11,6 +11,7 @@ import Rswift
 class LoginViewController: UIViewController {
 
     var loginWebView: WKWebView?
+    private let instagramApiProvider = InstagramApiProvider()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,7 @@ class LoginViewController: UIViewController {
         let configuration = WKWebViewConfiguration()
         loginWebView = WKWebView.init(frame: .zero, configuration: configuration)
         loginWebView?.navigationDelegate = self
-        if let apiAuthURl = InstagramApiProvider.shared.getAuthUrl(), let webView = loginWebView {
+        if let apiAuthURl = instagramApiProvider.getAuthUrl(), let webView = loginWebView {
             view.addSubview(webView)
             setupConstraintsForWebView()
             let urlRequest = URLRequest(url: apiAuthURl)
@@ -63,7 +64,7 @@ extension LoginViewController: WKNavigationDelegate {
     // MARK: WKNavigationDelegate
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
    
-        InstagramApiProvider.shared.handleAccessToken(urlRequest: navigationAction.request) { [weak self] (success, error) in
+        instagramApiProvider.handleAccessToken(urlRequest: navigationAction.request) { [weak self] (success, error) in
             if success {
                 decisionHandler(.cancel)
                 self?.openGalleryScreen()

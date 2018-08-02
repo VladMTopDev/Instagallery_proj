@@ -15,9 +15,12 @@ class GalleryViewController: UIViewController {
 
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
 
+    
+    private let instagramApiProvider = InstagramApiProvider()
     private let refreshControl = UIRefreshControl()
     private let transition = BubbleTransition()
     private var cellLocation: CGPoint!
+    
     
     fileprivate var isThumbnailsMode = false
     fileprivate var shownIndexes : [IndexPath] = []
@@ -31,8 +34,8 @@ class GalleryViewController: UIViewController {
         layout.delegate = self
         setGalleryMode()
         addButtonsToNavigationBar()
-        InstagramApiProvider.shared.delegate = self
-        InstagramApiProvider.shared.getUserPhotos()
+        instagramApiProvider.delegate = self
+        instagramApiProvider.getUserPhotos()
         registerCell()
         styleUI()
         toAddRefreshControll()
@@ -95,7 +98,7 @@ class GalleryViewController: UIViewController {
     }
     
     @objc private func refreshData(_ sender: Any) {
-        InstagramApiProvider.shared.getUserPhotos()
+        instagramApiProvider.getUserPhotos()
     }
     
     func setGalleryMode() {
@@ -112,7 +115,7 @@ class GalleryViewController: UIViewController {
     //MARK: - Actions
     
     @objc func logoutAction(_ sender: Any) {
-        InstagramApiProvider.shared.logout()
+        instagramApiProvider.logout()
     }
     
     @objc func changeGalleryStyle(_ sender: Any) {
